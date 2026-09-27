@@ -49,9 +49,10 @@ export const ServiceEcosystemSection = () => {
         </div>
 
         {/* Horizontal Accordion Layout */}
-        <div className="flex flex-col lg:flex-row h-[800px] lg:h-[600px] gap-4 w-full">
+        <div className="flex flex-col lg:flex-row h-auto lg:h-[600px] gap-4 w-full">
           {servicesData.map((service) => {
             const isActive = activeTab === service.id;
+            const isDesktop = typeof window !== 'undefined' && window.innerWidth > 1024;
 
             return (
               <motion.div
@@ -60,11 +61,11 @@ export const ServiceEcosystemSection = () => {
                 layout
                 initial={false}
                 animate={{
-                  flex: isActive ? (window.innerWidth > 1024 ? 4 : 4) : 1,
+                  flex: isDesktop ? (isActive ? 4 : 1) : undefined,
                   opacity: 1,
                 }}
                 transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
-                className={`relative rounded-3xl overflow-hidden cursor-pointer group flex flex-col lg:flex-row border ${
+                className={`relative rounded-[2rem] overflow-hidden cursor-pointer group flex flex-col lg:flex-row border ${
                   isActive ? 'border-primary/50' : 'border-border/50 hover:border-primary/30'
                 }`}
                 style={{

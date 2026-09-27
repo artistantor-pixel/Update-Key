@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
-import { servicesData, pricingData, caseStudiesData, teamData, careersData, calculatorData } from '../data';
+import { servicesData, pricingData, caseStudiesData, teamData, careersData, calculatorData, sectorsData } from '../data';
 
 // --- Types ---
 export interface HeroContent {
@@ -78,6 +78,19 @@ export interface CalculatorCategory {
   items: CalculatorItem[];
 }
 
+export interface SectorContent {
+  id: string;
+  title: string;
+  description: string;
+  iconName: string;
+  color: string;
+  bgGlow: string;
+  link: string;
+  className: string;
+  large: boolean;
+  horizontal: boolean;
+}
+
 export interface ContentState {
   hero: HeroContent;
   services: ServiceContent[];
@@ -86,6 +99,7 @@ export interface ContentState {
   team: TeamMemberContent[];
   careers: CareerContent[];
   calculator: CalculatorCategory[];
+  sectors: SectorContent[];
 }
 
 interface ContentContextType {
@@ -97,6 +111,7 @@ interface ContentContextType {
   updateTeam: (newTeam: TeamMemberContent[]) => void;
   updateCareers: (newCareers: CareerContent[]) => void;
   updateCalculator: (newCalculator: CalculatorCategory[]) => void;
+  updateSectors: (newSectors: SectorContent[]) => void;
 }
 
 // --- Default Data ---
@@ -117,6 +132,7 @@ const defaultContent: ContentState = {
   team: teamData,
   careers: careersData,
   calculator: calculatorData,
+  sectors: sectorsData,
 };
 
 // --- Context Setup ---
@@ -153,8 +169,12 @@ export const ContentProvider = ({ children }: { children: ReactNode }) => {
     setContent((prev) => ({ ...prev, calculator: newCalculator }));
   };
 
+  const updateSectors = (newSectors: SectorContent[]) => {
+    setContent((prev) => ({ ...prev, sectors: newSectors }));
+  };
+
   return (
-    <ContentContext.Provider value={{ content, updateHero, updateServices, updatePricing, updateCaseStudies, updateTeam, updateCareers, updateCalculator }}>
+    <ContentContext.Provider value={{ content, updateHero, updateServices, updatePricing, updateCaseStudies, updateTeam, updateCareers, updateCalculator, updateSectors }}>
       {children}
     </ContentContext.Provider>
   );

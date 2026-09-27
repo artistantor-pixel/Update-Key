@@ -8,12 +8,14 @@ import { CaseStudiesSection } from '../components/sections/CaseStudiesSection';
 import { TestimonialsSlider } from '../components/sections/TestimonialsSlider';
 import { FaqSection } from '../components/sections/FaqSection';
 import { TeamSection } from '../components/sections/TeamSection';
+import { OurSectorsSection } from '../components/sections/OurSectorsSection';
 
 export const HomePage = () => {
   return (
     <>
       <HeroSection />
       <MarqueeSection />
+      <OurSectorsSection />
       <ValueMatrixSection />
       <ServiceEcosystemSection />
       <CaseStudiesSection />
