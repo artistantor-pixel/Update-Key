@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useContent } from '../../context/ContentContext';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
-import { Save, LayoutTemplate, Briefcase, Tag, Target, Users, Search, Calculator, Plus, Trash2, LayoutGrid } from 'lucide-react';
+import { Save, LayoutTemplate, Briefcase, Tag, Target, Users, Search, Calculator, LayoutGrid } from 'lucide-react';
 
 type Tab = 'hero' | 'sectors' | 'services' | 'pricing' | 'work' | 'team' | 'careers' | 'calculator';
 

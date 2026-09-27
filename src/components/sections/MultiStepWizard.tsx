@@ -381,7 +381,7 @@ export const MultiStepWizard = () => {
               ) : (
                 <div className="space-y-4">
                   <AnimatePresence>
-                    {selectedItems.map((item, idx) => (
+                    {selectedItems.map((item, _idx) => (
                       <motion.div 
                         key={item.id}
                         initial={{ opacity: 0, x: 20, height: 0 }}

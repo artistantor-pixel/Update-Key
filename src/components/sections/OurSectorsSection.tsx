@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Newspaper, Smile, Users, ShoppingCart, ArrowUpRight } from 'lucide-react';
-import { Card } from '../ui/Card';
+
 import { useContent } from '../../context/ContentContext';
 
 const iconMap: Record<string, any> = {
