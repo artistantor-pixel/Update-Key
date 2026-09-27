@@ -21,15 +21,15 @@ export const Navbar = () => {
     <>
       <header 
         className={cn(
-          "fixed top-0 left-0 right-0 z-[100] transition-all duration-300",
-          isScrolled ? "py-0 md:py-4 bg-surface/90 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-border md:border-none shadow-sm md:shadow-none" : "py-4 md:py-6 bg-transparent"
+          "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 pointer-events-none",
+          isScrolled ? "py-3 md:py-4" : "py-4 md:py-6"
         )}
       >
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-3 md:px-4 max-w-7xl">
           <div className={cn(
-            "flex items-center justify-between transition-all duration-500",
+            "flex items-center justify-between transition-all duration-500 pointer-events-auto",
             isScrolled 
-              ? "h-16 md:h-16 px-2 md:px-6 md:glass md:rounded-full md:shadow-lg md:border md:border-white/60" 
+              ? "h-14 md:h-16 px-4 md:px-6 glass rounded-full shadow-lg border-white/60" 
               : "h-14 md:h-20 bg-transparent px-2 md:px-4 border-transparent rounded-full"
           )}>
             {/* Logo */}
